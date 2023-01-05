@@ -1,6 +1,7 @@
-FROM python:3-alpine
+FROM python:3.8-slim-bullseye
 
-RUN apk add --update git bash curl unzip zip openssl make openssh-client
+RUN apt-get update
+RUN apt-get install -y zip unzip git bash make curl openssl openssh-client
 
 ENV TERRAFORM_VERSION="0.14.4"
 
